@@ -10,13 +10,9 @@ export class BankServiceService {
     const url = 'http://localhost:8081/allTransctions';
     return this.httpClient.get(url);
   }
+  pay2(url: string) {
+    // var lasttry = url.toString();
+    // console.log(lasttry);
+    return this.httpClient.get(url);
+  }
 }
-
-// @Injectable({
-//   providedIn: 'root' // alternative way of registering a service globally
-// })
-// @Injectable()
-// export class ProductService {
-//   // Dependency injection
-
-// }

@@ -26,6 +26,12 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatButtonModule } from '@angular/material/button';
 import { FooterComponent } from './components/footer/footer.component';
 import { DialogComponent } from './components/dialog/dialog.component';
+import { PayAmountComponent } from './home/pay-amount/pay-amount.component';
+import { PayAmount2Component } from './home/pay-amount2/pay-amount2.component';
+import { CheckBalanceComponent } from './home/check-balance/check-balance.component';
+import { HomepageComponent } from './home/homepage/homepage.component';
+import { CheckRecieverComponent } from './home/check-reciever/check-reciever.component';
+import { CheckCustomerComponent } from './home/check-customer/check-customer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +45,12 @@ import { DialogComponent } from './components/dialog/dialog.component';
     DashboardComponent,
     FooterComponent,
     DialogComponent,
+    PayAmountComponent,
+    PayAmount2Component,
+    CheckBalanceComponent,
+    HomepageComponent,
+    CheckRecieverComponent,
+    CheckCustomerComponent,
   ],
   imports: [
     BrowserModule,

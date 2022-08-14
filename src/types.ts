@@ -10,11 +10,21 @@ export type transactiontype = {
   paymentCode: string;
   amount: number;
 };
-
+export type paytype = {
+  bic: string;
+  paymentCode: string;
+  amount: number;
+};
 export type productType = {
   productId: number;
   productName: string;
   productPrice: number;
   productStock: number;
   productImage: string;
+};
+
+export type users = {
+  name: string;
+  id: number;
+  city: string;
 };

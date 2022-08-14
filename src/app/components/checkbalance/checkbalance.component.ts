@@ -17,9 +17,9 @@ export class CheckbalanceComponent implements OnInit {
 
   ngOnInit(): void {}
   check_balance() {
-    this.paymentService.checkBal(this.custId).subscribe((data) => {
-      console.log('backend test success', data);
-      this.transactionList = data as transactiontype[];
-    });
+    // this.paymentService.checkBal(this.custId).subscribe((data) => {
+    //   console.log('backend test success', data);
+    //   this.transactionList = data as transactiontype[];
+    // });
   }
 }

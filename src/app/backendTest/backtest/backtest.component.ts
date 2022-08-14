@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BankServiceService } from 'src/app/services/bank-service.service';
-import { productType } from 'src/types';
+import { productType, users } from 'src/types';
 
 @Component({
   selector: 'app-backtest',
@@ -24,6 +24,10 @@ export class BacktestComponent implements OnInit {
     private bankService: BankServiceService,
     private router: Router
   ) {}
+
+  submiting(u: users) {
+    console.warn(u);
+  }
 
   ngOnInit(): void {
     this.testBackend();

@@ -1,1 +1,7 @@
 <p>backtest works!</p>
+<form action="" #users="ngForm" (submit)="submiting(users.value)">
+  <input type="text" name="name" ngModel placeholder="name" />
+  <input type="text" name="id" ngModel placeholder="id" />
+  <input type="text" name="city" ngModel placeholder="city" />
+  <button type="submit">submit</button>
+</form>
