@@ -1,0 +1,10 @@
+<div *ngIf="checkSanctiondone">
+  <input type="text" [(ngModel)]="namesending" />
+  <button (click)="getName()">Submit Name</button>
+</div>
+
+<div *ngIf="checkSanction">
+  <app-pay-amount2></app-pay-amount2>
+</div>
+
+{{ blocked }}

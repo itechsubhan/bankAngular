@@ -4,7 +4,7 @@
   <div class="container d-flex justify-content-center mt-5">
     <div class="card">
       <div class="py-2 px-3">
-        <h1 class="amount">Check Balance of Reciever Bank</h1>
+        <h1 class="amount">Check validity of Reciever Bank</h1>
       </div>
       <div>
         <div class="py-2 px-3">
@@ -12,7 +12,7 @@
             <div class="border-left pl-2">
               <span class="head">Enter the BIC here</span>
               <!-- **************imp customer id  here ************ -->
-              <input [(ngModel)]="BIC" name="BIC" required type="number" />
+              <input [(ngModel)]="BIC" name="BIC" required type="text" />
             </div>
           </div>
         </div>
@@ -23,6 +23,7 @@
           <button type="submit" class="btn btn-primary button">
             check Reciever
           </button>
+          {{ this.bankName }}
         </div>
       </div>
     </div>

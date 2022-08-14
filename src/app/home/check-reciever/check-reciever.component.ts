@@ -18,14 +18,20 @@ export class CheckRecieverComponent implements OnInit {
   });
 
   BIC!: string;
+  bankName!: string;
   senders: any;
+  saveBIC() {
+    sessionStorage.setItem('BIC', String(this.BIC));
+  }
 
   public getReciever() {
     let resp = this.payservice.getRecieverId(this.BIC);
     resp.subscribe((data) => {
-      this.senders = data;
+      this.bankName = data;
       console.log(data);
+      if (data != null) {
+        this.saveBIC();
+      }
     });
-    console.log(resp);
   }
 }

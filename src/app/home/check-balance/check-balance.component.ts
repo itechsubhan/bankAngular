@@ -11,12 +11,17 @@ export class CheckBalanceComponent implements OnInit {
   constructor(private payservice: PaymentServiceService) {}
 
   Balance: string = '';
+  PreviousDataOfCustomerId!: string;
   checkBalanceForm = new FormGroup({
     CustId: new FormControl('', [Validators.required]),
     amount: new FormControl(),
   });
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (sessionStorage.getItem('Customer_ID') != null) {
+      this.PreviousDataOfCustomerId = sessionStorage.getItem('Customer_ID')!;
+    }
+  }
 
   checkBalance() {
     this.payservice

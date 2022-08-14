@@ -44,6 +44,8 @@ export class PaymentServiceService {
     return this.httpClient.get('http://localhost:8081/details/' + customerId);
   }
   public getRecieverId(BIC: string) {
-    return this.httpClient.get('http://localhost:8081/details/' + BIC);
+    return this.httpClient.get('http://localhost:8081/reciever/' + BIC, {
+      responseType: 'text',
+    });
   }
 }

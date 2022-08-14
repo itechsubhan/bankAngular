@@ -20,9 +20,16 @@ export class PayAmount2Component implements OnInit {
     amount: new FormControl(),
   });
 
-  ngOnInit(): void {}
-  name: string = 'Demoname';
-  customerID: string = 'DEMOIDOF CUSTOMER';
+  ngOnInit(): void {
+    if (sessionStorage.getItem('Customer_ID') != null) {
+      this.customerID = sessionStorage.getItem('Customer_ID')!;
+    }
+    if (sessionStorage.getItem('Name') != null) {
+      this.name = sessionStorage.getItem('Name')!;
+    }
+  }
+  name!: string;
+  customerID!: string;
   Balance: string = '';
   submitedForm() {
     console.log('asubdfksdbfkbsd');

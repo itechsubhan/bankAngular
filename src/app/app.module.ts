@@ -32,6 +32,7 @@ import { CheckBalanceComponent } from './home/check-balance/check-balance.compon
 import { HomepageComponent } from './home/homepage/homepage.component';
 import { CheckRecieverComponent } from './home/check-reciever/check-reciever.component';
 import { CheckCustomerComponent } from './home/check-customer/check-customer.component';
+import { CheckSdnComponent } from './home/check-sdn/check-sdn.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,6 +52,7 @@ import { CheckCustomerComponent } from './home/check-customer/check-customer.com
     HomepageComponent,
     CheckRecieverComponent,
     CheckCustomerComponent,
+    CheckSdnComponent,
   ],
   imports: [
     BrowserModule,

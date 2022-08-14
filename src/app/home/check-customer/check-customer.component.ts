@@ -12,6 +12,7 @@ export class CheckCustomerComponent implements OnInit {
 
   ngOnInit(): void {}
   customerId!: number;
+  customerName!: string;
   senders: any;
   open: boolean = false;
 
@@ -21,6 +22,7 @@ export class CheckCustomerComponent implements OnInit {
 
   saveCustId() {
     sessionStorage.setItem('Customer_ID', String(this.customerId));
+    sessionStorage.setItem('Name', String(this.customerName));
   }
 
   public getCustomer() {
@@ -29,6 +31,7 @@ export class CheckCustomerComponent implements OnInit {
       this.senders = data;
       console.log(data);
       if (data != null) {
+        this.customerName = this.senders.account_Holder_Name;
         this.saveCustId();
         this.opendetails();
       }
