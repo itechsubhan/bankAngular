@@ -1,9 +1,9 @@
 import { compileClassMetadata } from '@angular/compiler';
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BacktestComponent } from './backendTest/backtest/backtest.component';
+// import { BacktestComponent } from './backendTest/backtest/backtest.component';
 
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+// import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { ForloopComponent } from './forloop/forloop.component';
 import { CheckBalanceComponent } from './home/check-balance/check-balance.component';
@@ -11,10 +11,9 @@ import { CheckCustomerComponent } from './home/check-customer/check-customer.com
 import { CheckRecieverComponent } from './home/check-reciever/check-reciever.component';
 import { CheckSdnComponent } from './home/check-sdn/check-sdn.component';
 import { HomepageComponent } from './home/homepage/homepage.component';
-import { PayAmountComponent } from './home/pay-amount/pay-amount.component';
-import { PayAmount2Component } from './home/pay-amount2/pay-amount2.component';
+// import { PayAmountComponent } from './home/pay-amount/pay-amount.component';
+// import { PayAmount2Component } from './home/pay-amount2/pay-amount2.component';
 import { LoginComponent } from './login/login.component';
-import { PaymentHomeComponent } from './payment-home/payment-home.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -23,10 +22,9 @@ const routes: Routes = [
   { path: 'checkreciever', component: CheckRecieverComponent },
   { path: 'checkcustomer', component: CheckCustomerComponent },
   { path: 'payment', component: CheckSdnComponent },
-  { path: 'payment2', component: PayAmount2Component },
   // { path: 'aniket', component:  },
-  { path: 'backtest', component: BacktestComponent },
-  { path: 'dashboard', component: DashboardComponent },
+  // { path: 'backtest', component: BacktestComponent },
+
   { path: 'home', component: HomepageComponent },
   { path: '**', component: ErrorPageComponent },
 ];
