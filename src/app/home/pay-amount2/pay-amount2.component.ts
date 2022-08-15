@@ -15,14 +15,19 @@ export class PayAmount2Component implements OnInit {
   constructor(private bankService: BankServiceService) {}
 
   paymentForm = new FormGroup({
+    customerID: new FormControl('', [Validators.required]),
     bic: new FormControl('', [Validators.required]),
     paymentCode: new FormControl('', [Validators.required]),
-    amount: new FormControl(),
+    RecieverAccNo: new FormControl('', [Validators.required]),
+    amount: new FormControl('', [Validators.required]),
   });
 
   ngOnInit(): void {
     if (sessionStorage.getItem('Customer_ID') != null) {
       this.customerID = sessionStorage.getItem('Customer_ID')!;
+    }
+    if (sessionStorage.getItem('BIC') != null) {
+      this.bic = sessionStorage.getItem('BIC')!;
     }
     if (sessionStorage.getItem('Name') != null) {
       this.name = sessionStorage.getItem('Name')!;
@@ -30,10 +35,10 @@ export class PayAmount2Component implements OnInit {
   }
   name!: string;
   customerID!: string;
+  bic!: string;
   Balance: string = '';
-  submitedForm() {
-    console.log('asubdfksdbfkbsd');
-  }
+  amount!: number;
+  RecieverAccNo!: string;
 
   // par1: string = this.paymentForm.value.bic as string;
   // par2: number = this.paymentForm.value.amount as number;
@@ -41,42 +46,36 @@ export class PayAmount2Component implements OnInit {
 
   payAmount() {
     // get transactions
-    var custId = this.paymentForm.controls['bic'].value as string;
-    var amount = this.paymentForm.controls['amount'].value as string;
-    var paymentCode = this.paymentForm.controls['paymentCode'].value as string;
-    const url =
-      'http://localhost:8081/sendMoney?custid=' +
-      custId +
-      '&sendBalance=' +
-      amount +
-      '&paycode=' +
-      paymentCode;
-    this.bankService.pay2(url).subscribe((data) => {
-      console.log('backend test success', data);
-      alert('AVAILABLE BALANCE = ' + data);
-      this.Balance = 'AVAILABLE BALANCE = ' + data;
-      // this.transactionList = data as transactiontype[];
-      // JSON.stringify(data)
-    });
+    if (this.paymentForm.valid) {
+      var custId = this.customerID;
+      var BIC = this.bic;
+      var amount = this.paymentForm.controls['amount'].value as string;
+      var paymentCode = this.paymentForm.controls['paymentCode']
+        .value as string;
+      // 	public int sendMoney(@RequestParam String custid,String bic,int sendBalance,String paycode, String recieverAccNo) {
 
-    // this.payservice
-    //   .pay2(
-    //     this.paymentForm.controls['bic'].value as string,
-    //     this.paymentForm.controls['amount'].value,
-    //     this.paymentForm.value
-    //   )
-    //   .subscribe((res) => {
-    //     console.log('backend test success', res);
-    //   });
-
-    // console.log(this.paymentForm.value);
-    // console.log(this.bodyobj);
-    // this.payservice.PayAmountToCustomer(
-    //   this.par1,
-    //   this.par2,
-    //   // this.paymentForm.value
-    // );
-
-    // alert('you have paid');
+      const url =
+        'http://localhost:8081/sendMoney?custid=' +
+        custId +
+        '&bic=' +
+        BIC +
+        '&sendBalance=' +
+        amount +
+        '&paycode=' +
+        paymentCode +
+        '&recieverAccNo=' +
+        this.RecieverAccNo;
+      // the url man
+      this.bankService.pay2(url).subscribe((data) => {
+        console.log('backend test success', data);
+        alert('AVAILABLE BALANCE = ' + data);
+        this.Balance = 'AVAILABLE BALANCE = ' + data;
+        // this.transactionList = data as transactiontype[];
+        // JSON.stringify(data)
+      });
+    } else {
+      this.Balance = 'You are Correctly an idiot';
+      console.log('form validation failed');
+    }
   }
 }

@@ -3,11 +3,16 @@
     <div class="d-flex media">
       <div></div>
       <div class="media-body">
-        <h4>
-          <a href="#">{{ transactionList.bic }} </a>
+        <h2>
+          <a href="#">{{ transactionList.customerId }} </a>
           <span class="badge bg-success">Payment Success</span>
-        </h4>
-        <p class="text-muted">Donated on August 6, 2016<br /></p>
+        </h2>
+
+        <p class="text-muted">
+          from {{ transactionList.customerId }} credit to
+          {{ transactionList.recieverAccountNo }} to the bank
+          {{ transactionList.bic }}<br />
+        </p>
         <p class="text-muted">
           Payment ID: {{ transactionList.paymentNO }}<br />
         </p>
@@ -22,12 +27,13 @@
     <p></p>
   </div>
   <div class="col-md-3 col-lg-6 offset-lg-0 text-end">
-    <p>
+    <h1>
       <strong class="badge bg-success">{{
         transactionList.paymentCode
       }}</strong>
-
+    </h1>
+    <h3>
       {{ convert_to_full_msg(transactionList.paymentCode) }}
-    </p>
+    </h3>
   </div>
 </div>

@@ -28,7 +28,7 @@
                 type="number"
                 class="dollar amount"
                 formControlName="amount"
-                ngModel
+                [(ngModel)]="amount"
               />
             </div>
           </div>
@@ -39,12 +39,46 @@
               <span class="head">Enter the paymentCode of transfer</span>
 
               <!-- **************imp amount entering here ************ -->
-              <input
+              <!-- <input
                 type="string"
                 class="dollar amount"
                 formControlName="paymentCode"
                 placeholder="paymentCode"
                 ngModel
+              /> -->
+              <br />
+
+              <select
+                class="form-select"
+                aria-label="Default select example"
+                formControlName="paymentCode"
+              >
+                <option value="CHQB">CHQB</option>
+                <option value="CORT">CORT</option>
+                <option value="HOLD">HOLD</option>
+                <option value="INTC">INTC</option>
+                <option value="PHOB">PHOB</option>
+                <option value="PHOI">PHOI</option>
+                <option value="PHON">PHON</option>
+                <option value="REPA">REPA</option>
+                <option value="SDVA">SDVA</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+        <div class="py-2 px-3">
+          <div class="first pl-2 d-flex py-2">
+            <div class="border-left pl-2">
+              <span class="head">Confirm Your customerID </span>
+
+              <!-- **************imp amount entering here ************ -->
+              <input
+                type="string"
+                class="dollar amount"
+                placeholder="customerID"
+                formControlName="customerID"
+                [(ngModel)]="customerID"
               />
             </div>
           </div>
@@ -52,15 +86,30 @@
         <div class="py-2 px-3">
           <div class="first pl-2 d-flex py-2">
             <div class="border-left pl-2">
-              <span class="head">Enter the RecieverID to transfer</span>
-
-              <!-- **************imp amount entering here ************ -->
+              <span class="head">Enter Your BIC </span>
+              <!-- **************imp  auto enter BIC here ************ -->
               <input
                 type="string"
                 class="dollar amount"
-                formControlName="bic"
                 placeholder="bic"
-                ngModel
+                formControlName="bic"
+                value="{{ bic }}"
+                [(ngModel)]="bic"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="py-2 px-3">
+          <div class="first pl-2 d-flex py-2">
+            <div class="border-left pl-2">
+              <span class="head">Enter Reciever Account No </span>
+              <!-- **************imp  auto enter BIC here ************ -->
+              <input
+                type="string"
+                class="dollar amount"
+                placeholder="Reciever acc no."
+                formControlName="RecieverAccNo"
+                [(ngModel)]="RecieverAccNo"
               />
             </div>
           </div>

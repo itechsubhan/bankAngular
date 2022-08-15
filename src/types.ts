@@ -6,7 +6,9 @@ export type bankType = {
 
 export type transactiontype = {
   paymentNO: number;
+  customerId: string;
   bic: string;
+  recieverAccountNo: string;
   paymentCode: string;
   amount: number;
 };

@@ -15,7 +15,7 @@ export class CheckSdnComponent implements OnInit {
   blocked!: string;
 
   ngOnInit(): void {
-    alert('Enter your Name');
+    // alert('Enter your Name');
     this.checkSanction = false;
   }
   check(name: string) {
