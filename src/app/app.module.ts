@@ -29,6 +29,7 @@ import { HomepageComponent } from './home/homepage/homepage.component';
 import { CheckRecieverComponent } from './home/check-reciever/check-reciever.component';
 import { CheckCustomerComponent } from './home/check-customer/check-customer.component';
 import { CheckSdnComponent } from './home/check-sdn/check-sdn.component';
+import { NavbarComponent } from './home/navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +47,7 @@ import { CheckSdnComponent } from './home/check-sdn/check-sdn.component';
     CheckRecieverComponent,
     CheckCustomerComponent,
     CheckSdnComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
